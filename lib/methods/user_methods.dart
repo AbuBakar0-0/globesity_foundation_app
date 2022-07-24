@@ -21,3 +21,40 @@ updateTime(wakeup,bedtime) async {
   );
   var res = response.data;
 }
+
+updateProgress(weightLost) async {
+  var token = await getAuthToken();
+  var dio = Dio();
+  String url = (Url.url + "/Contacts/" + Users.id.toString()).toString();
+  dio.options.headers['Authorization'] = 'Zoho-oauthtoken ' + token;
+  var response = await dio.put(
+    url,
+    data: {
+      "data": [
+        {
+          "Weight_Lost": weightLost,
+        }
+      ]
+    },
+  );
+  var res = response.data;
+}
+
+
+updatePassword(password) async {
+  var token = await getAuthToken();
+  var dio = Dio();
+  String url = (Url.url + "/Contacts/" + Users.id.toString()).toString();
+  dio.options.headers['Authorization'] = 'Zoho-oauthtoken ' + token;
+  var response = await dio.put(
+    url,
+    data: {
+      "data": [
+        {
+          "Password": password,
+        }
+      ]
+    },
+  );
+  var res = response.data;
+}

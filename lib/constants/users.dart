@@ -8,7 +8,6 @@ class Users{
   static var wakeup="";
   static var bed="";
 
-
   static var age="";
   static var dailyActivity="";
   static var height="";
@@ -25,6 +24,6 @@ class Users{
 
   static var gender="";
 
-
+  static var weightLost="";
 
 }

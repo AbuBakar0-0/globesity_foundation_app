@@ -4,9 +4,6 @@ import 'dart:ui';
 
 class Constant{
   static var greenColor=const Color(0xff086c74);
-  static var orangeColor=const Color(0xfff8823c);
-  static var blue2Color=const Color(0xffa4c4dc);
-  static var orange2Color=const Color(0xfffbbd4e);
 }
 
 class Url{

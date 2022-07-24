@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:globesity/widgets/appbar.dart';
 import 'package:globesity/widgets/cards.dart';
@@ -6,6 +7,7 @@ import 'package:globesity/widgets/cards.dart';
 import '../constants/constants.dart';
 import '../constants/users.dart';
 import '../widgets/textfields.dart';
+import 'change_password.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -17,12 +19,9 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   TextEditingController controller = TextEditingController();
 
-  bool obs = true;
-  IconData icon = Icons.visibility;
-
   @override
   Widget build(BuildContext context) {
-    controller.text = "Hello\$123";
+    controller.text = Users.password;
     return Scaffold(
       appBar: appbar2("Profile"),
       body: Container(
@@ -70,21 +69,21 @@ class _ProfileState extends State<Profile> {
                               Container(
                                 width: 220,
                                 child: TextFormField(
-                                  obscureText: obs,
+                                  obscureText: false,
                                   controller: controller,
                                   cursorColor: Colors.black,
                                   style: const TextStyle(
                                     color: Colors.black,
                                   ),
                                   decoration: InputDecoration(
-                                    contentPadding:const EdgeInsets.all(10),
+                                    contentPadding: const EdgeInsets.all(10),
                                     fillColor: Colors.black,
-                                    focusedBorder:const OutlineInputBorder(
+                                    focusedBorder: const OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Colors.black,
                                       ),
                                     ),
-                                    enabledBorder:const OutlineInputBorder(
+                                    enabledBorder: const OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Colors.black,
                                         width: 2.0,
@@ -92,15 +91,10 @@ class _ProfileState extends State<Profile> {
                                     ),
                                     suffixIcon: IconButton(
                                       onPressed: () {
-                                        if(obs){
-                                          icon=Icons.visibility_off;
-                                        }
-                                        else{
-                                          icon=Icons.visibility;
-                                        }
+                                        Get.to(const ChangePassword());
                                       },
                                       icon: Icon(
-                                        icon,
+                                        Icons.edit,
                                       ),
                                     ),
                                   ),
@@ -121,7 +115,8 @@ class _ProfileState extends State<Profile> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           profileBottom("Height", Users.height),
-                          profileBottom("Weight", Users.weight + ' lbs')
+                          profileBottom(
+                              "Weight to Lose", Users.weighttolose + " lbs"),
                         ],
                       ),
                       Row(
@@ -132,8 +127,14 @@ class _ProfileState extends State<Profile> {
                               "Healthy Weight", Users.healthy + " lbs")
                         ],
                       ),
-                      profileBottom(
-                          "Weight to Lose", Users.weighttolose + " lbs")
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          profileBottom("Start Weight", Users.weight + ' lbs'),
+                          profileBottom(
+                              "Total Weight Loss", Users.weightLost + " lbs")
+                        ],
+                      ),
                     ],
                   ),
                 ),

@@ -233,53 +233,6 @@ legalCard(title,url){
 }
 
 
-userHomeCard(txt,slug, img) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        child: Text(
-          txt,
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Constant.greenColor,
-          ),
-        ),
-      ),
-      Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        child: Text(
-          slug,
-          style:const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.bold,
-            color: Colors.blueGrey,
-          ),
-        ),
-      ),
-      const SizedBox(
-        height: 20,
-      ),
-      // ignore: sized_box_for_whitespace
-      Container(
-        height: 150,
-        child: Align(
-          alignment: Alignment.center,
-          child: Image(
-            image: AssetImage(img),
-          ),
-        ),
-      ),
-      const SizedBox(
-        height: 20,
-      ),
-    ],
-  );
-}
-
-
 profileBottom(name,val){
   return Container(
     width: 150,

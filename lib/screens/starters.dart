@@ -21,7 +21,6 @@ class Starters extends StatefulWidget {
 class _StartersState extends State<Starters> {
   @override
   Widget build(BuildContext context) {
-    print(Users.id);
     return Scaffold(
       appBar: appbar(),
       body: Container(

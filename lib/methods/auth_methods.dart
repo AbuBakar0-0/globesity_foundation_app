@@ -41,6 +41,7 @@ login(var email, var password, context) async {
         Users.country = res['data'][i]['Mailing_Country'].toString();
         Users.status = res['data'][i]['STATUS'].toString();
         Users.gender = res['data'][i]['Gender'].toString();
+        Users.weightLost=res['data'][i]['Weight_Lost'].toString();
         if (Users.gender.toString().toLowerCase() == "female") {
           Users.healthy = res['data'][i]['Healthy_Weight_F'].toString();
           Users.weighttolose = res['data'][i]['Weight_to_lose_F'].toString();

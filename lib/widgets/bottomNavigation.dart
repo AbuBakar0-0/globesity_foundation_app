@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:globesity/constants/constants.dart';
 import 'package:globesity/screens/daily_routine.dart';
 import 'package:globesity/screens/join_the_bootcamp.dart';
+import 'package:globesity/screens/my_progress.dart';
 import 'package:globesity/screens/starters.dart';
 
 import '../constants/users.dart';
@@ -75,7 +76,7 @@ bottomNavigation() {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(const JoinBootcamp());
+                  Get.to(const MyProgress());
                 },
                 child: Column(
                   children: const [
